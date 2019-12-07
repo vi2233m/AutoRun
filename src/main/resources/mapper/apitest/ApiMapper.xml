@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zot.autorun.moudules.apitest.dao.ApiMapper">
+    <select id="selectApiById" parameterType="int" resultType="com.zot.autorun.moudules.apitest.entity.ApiData">
+        select id,url, headers, interface_name as interfaceName, request_json as requestJson, request_data as requestData, asserts from inv_json where id = #{id};
+    </select>
+    <select id="selectApiByName" parameterType="String" resultType="com.zot.autorun.moudules.apitest.entity.ApiData">
+        select id,url, headers, interface_name as interfaceName, request_json as requestJson, request_data as requestData, asserts from inv_json where interface_name = #{interface_name};
+    </select>
+</mapper>
